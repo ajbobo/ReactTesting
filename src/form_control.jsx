@@ -37,7 +37,7 @@ class FormControl extends React.Component {
                         Clear
                     </button>
                 </form>
-                {this.state.displayName ? <p>Your name is {this.state.displayName}</p> : null}
+                {this.state.displayName ? <p>You said that your name is {this.state.displayName}. Nice to meet you.</p> : null}
             </div>
         );
     }
