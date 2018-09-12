@@ -1,11 +1,3 @@
-// let originalNumbers = [
-//     {key: 1, value: 'one'},
-//     {key: 2, value: 'two'},
-//     {key: 3, value: 'three'},
-//     {key: 4, value: 'four'},
-//     {key: 5, value: 'five'},
-// ];
-
 class ListControl extends React.Component {
     constructor(props) {
         super(props);
