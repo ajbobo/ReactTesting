@@ -1,17 +1,18 @@
-let originalNumbers = [
-    {key: 1, value: 'one'},
-    {key: 2, value: 'two'},
-    {key: 3, value: 'three'},
-    {key: 4, value: 'four'},
-    {key: 5, value: 'five'},
-];
+// let originalNumbers = [
+//     {key: 1, value: 'one'},
+//     {key: 2, value: 'two'},
+//     {key: 3, value: 'three'},
+//     {key: 4, value: 'four'},
+//     {key: 5, value: 'five'},
+// ];
 
 class ListControl extends React.Component {
     constructor(props) {
         super(props);
         // This makes a copy of what was in props. That way this.state can be modified without changing props (if that matters)
+        // I could use props.numbers.slice() but that's only a shallow copy, and the internal objects can still change
         let numbers = [];
-        originalNumbers.forEach((item) => numbers.push({key: item.key, value: item.value}));
+        props.numbers.forEach((item) => numbers.push({key: item.key, value: item.value}));
         this.state = {numbers: numbers};
 
         this.shuffleList = this.shuffleList.bind(this);
@@ -48,4 +49,10 @@ class ListControl extends React.Component {
 }
 
 let domContainer = document.querySelector('#list_container');
-ReactDOM.render(<ListControl numbers={originalNumbers}/>, domContainer);
+ReactDOM.render(<ListControl numbers={[
+    {key: 1, value: 'one'},
+    {key: 2, value: 'two'},
+    {key: 3, value: 'three'},
+    {key: 4, value: 'four'},
+    {key: 5, value: 'five'},
+]}/>, domContainer);
